@@ -1,0 +1,10 @@
+{% if annoucement is defined %}
+    <ul class="annoucementDisp">
+        <li class="id">{{ annoucement.id }}</li>
+        <li class="title">{{ annoucement.title }}</li>
+        <li class="content">{{ annoucement.content }}</li>
+        <li class="createdDate">{{ annoucement.createdDate | date("d/m/Y") }}</li>
+        <li class="linkToDetail"><a href="{{ path('pageDetail', {
+            'annouceId':annoucement.id}) }}">Voir plus...</a></li>
+    </ul>
+{% endif %}

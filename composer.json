@@ -1,4 +1,7 @@
 {
+    "authors": [
+        {"name" : "Loïc MACE"}
+    ],
     "type": "project",
     "license": "proprietary",
     "require": {

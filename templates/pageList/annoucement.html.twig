@@ -1,0 +1,8 @@
+{% if annoucement is defined %}
+    <ul class="annoucementDisp">
+        <li class="id">{{ annoucement.id }}</li>
+        <li class="title">{{ annoucement.title }}</li>
+        <li class="content">{{ annoucement.content }}</li>
+        <li class="createdDate">{{ annoucement.createdDate | date("d/m/Y") }}</li>
+    </ul>
+{% endif %}

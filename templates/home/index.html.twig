@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomePage{% endblock %}
+
+{% block body %}
+    {% if annoucements is defined %}
+    <div class="homeAnnoucements">
+        {% for a in annoucements %}
+            {{ include('home/annoucement.html.twig', {
+                annoucement:a,
+                }) }}
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}
