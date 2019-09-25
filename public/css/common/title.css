@@ -1,4 +1,7 @@
 h1 {
+    padding-top: 10px;
+    padding-bottom: 3px;
     text-align: center;
     font-size: 50px;
+    background-color: rgb(102, 206, 227);
 }

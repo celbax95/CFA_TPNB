@@ -10,8 +10,9 @@
 
     {% if annoucement is defined %}
     <div class="details">
-        {{ include('detail/annoucement.html.twig', {
+        {{ include('annoucement.html.twig', {
             'annoucement':annoucement,
+            link:false,
         }) }}
         <a class="detail/retour" href="{{ path('home') }}">Retour</a>
     </div>

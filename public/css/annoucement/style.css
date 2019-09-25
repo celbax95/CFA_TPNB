@@ -1,0 +1,21 @@
+ul.annoucementDisp {
+    width: 400px;
+    border: black solid 2px;
+    margin: auto;
+}
+
+ul.annoucementDisp:not(:first-child) {
+    margin-top: 15px;
+}
+
+ul.annoucementDisp li {
+    text-align: center;
+    list-style: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+ul.annoucementDisp li:not(:first-child) {
+    border-top: black solid 1px;
+
+}

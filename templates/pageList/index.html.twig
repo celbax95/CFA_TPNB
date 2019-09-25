@@ -13,7 +13,10 @@
     {% if annoucements is defined %}
         <div class="annoucementList">
             {% for a in annoucements %}
-                {{ include('pageList/annoucement.html.twig', {annoucement:a}) }}
+                {{ include('annoucement.html.twig', {
+                    annoucement:a,
+                    link:false,
+                }) }}
             {% endfor %}
         </div>
     {% endif %}

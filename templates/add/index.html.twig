@@ -10,16 +10,12 @@
 
 <div class="addAnnoucement">
     <h2>Ajout d'une annonce</h2>
-    <form>
-        <label for="title">Titre de l'annonce : </label>
-        <input type="text" name="title" class="title">
-        <br>
-        <label for="price">Prix de l'annonce : </label>
-        <input type="number" name="price" class="price">
-        <br>
-        <label for="content">Contenu de l'annonce : </label>
-        <input type="text" name="content" class="content"><br>
-        <input type="submit" value="Ajouter">
-    </form>
+    {{ form_start(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.price) }}
+        {{ form_row(form.content) }}
+
+        <button type="submit">Ajouter</button>
+    {{ form_end(form) }}
 </div>
 {% endblock %}
