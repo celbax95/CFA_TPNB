@@ -30,10 +30,9 @@ class AddController extends AbstractController
 
             $manager = $this->getDoctrine()->getManager();
 
-            $Annoucement = new Annoucement();
-            $Annoucement->setTitle($addAnnoucement->getTitle());
-            $Annoucement->setPrice($addAnnoucement->getPrice() * 100);
-            $Annoucement->setContent($addAnnoucement->getContent());
+            $Annoucement = new Annoucement($addAnnoucement->getTitle(),
+            $addAnnoucement->getPrice() * 100,
+            $addAnnoucement->getContent());
 
             // Save query
             $manager->persist($Annoucement);

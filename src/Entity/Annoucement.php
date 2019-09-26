@@ -4,8 +4,6 @@ namespace App\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\Date;
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnnoucementRepository")
  */
@@ -38,8 +36,11 @@ class Annoucement
      */
     private $createdAt;
 
-    public function __construct()
+    public function __construct(String $title, int $price, String $content)
     {
+        $this->title = $title;
+        $this->price  = $price;
+        $this->content = $content;
         $this->createdAt = new DateTime();
     }
 
