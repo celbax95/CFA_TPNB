@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Annoucement;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +19,9 @@ class PagesListController extends AbstractController
      *     schemes={"https"})
      */
     public function index(String $pageIndex): Response {
-        $annoucements = AnnoucementArray::get();
+        $repo = $this->getDoctrine()->getRepository(Annoucement::class);
+
+        $annoucements = $repo->findAll();
 
         return $this->render('pageList/index.html.twig', [
             'annoucements' => $annoucements,

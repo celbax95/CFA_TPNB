@@ -2,12 +2,11 @@
 
 {% block title %}Ajout{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/common/h2title.css') }}" type="text/css"/>
+{% endblock %}
 
+{% block body %}
 <div class="addAnnoucement">
     <h2>Ajout d'une annonce</h2>
     {{ form_start(form) }}

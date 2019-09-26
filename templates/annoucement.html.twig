@@ -5,7 +5,7 @@
     <ul class="annoucementDisp">
         <li class="title">{{annoucement.id ~ " - " ~ annoucement.title }}</li>
         <li class="content">{{ annoucement.content }}</li>
-        <li class="createdDate">{{ annoucement.createdDate | date("d/m/Y") }}</li>
+        <li class="createdAt">{{ annoucement.createdAt | date("d/m/Y") }}</li>
         {% if (link is defined) and (link == true) %}
         <li class="linkToDetail"><a href="{{ path('pageDetail', {
             'annouceId':annoucement.id}) }}">Voir plus...</a></li>

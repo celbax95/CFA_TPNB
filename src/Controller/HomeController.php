@@ -4,6 +4,8 @@
 namespace App\Controller;
 
 
+use App\Entity\Annoucement;
+use App\Repository\AnnoucementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,8 +19,9 @@ class HomeController extends AbstractController {
      * @return Response
      */
     public function index(): Response {
-        $annoucements = AnnoucementArray::get();
-        $homeAnnoucements = [$annoucements[0],$annoucements[1]];
+        $repo = $this->getDoctrine()->getRepository(Annoucement::class);
+
+        $homeAnnoucements = $repo->find2();
 
         return $this->render('home/index.html.twig', [
             'annoucements' => $homeAnnoucements,
