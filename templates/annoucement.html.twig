@@ -2,13 +2,26 @@
 
     <link rel="stylesheet" href="{{ asset('css/annoucement/style.css') }}" type="text/css"/>
 
-    <ul class="annoucementDisp">
-        <li class="title">{{annoucement.id ~ " - " ~ annoucement.title }}</li>
-        <li class="content">{{ annoucement.content }}</li>
-        <li class="createdAt">{{ annoucement.createdAt | date("d/m/Y") }}</li>
-        {% if (link is defined) and (link == true) %}
-        <li class="linkToDetail"><a href="{{ path('pageDetail', {
-            'annouceId':annoucement.id}) }}">Voir plus...</a></li>
-        {% endif %}
-    </ul>
+    <div class="shadow">
+        <table>
+            <thead>
+            <th colspan="1" class="id"> {{ annoucement.id }} </th>
+            <th colspan="1" class="title"> {{ annoucement.title }}</th>
+            <th colspan="1" class="date"> {{ annoucement.createdAt | date("d/m/Y") }}</th>
+            </thead>
+
+            <tbody>
+            <tr class="price">
+                <td colspan="3"> {{ annoucement.price / 100 ~ ' €' }} </td>
+            </tr>
+            <tr class="content">
+                <td colspan="3">{{ annoucement.content }}</td>
+            </tr>
+            <tr class="detail">
+                <td colspan="3"> <a href="{{ path('pageDetail', {
+                        'annouceId':annoucement.id}) }}">Voir plus...</a> </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 {% endif %}

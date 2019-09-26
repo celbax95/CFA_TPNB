@@ -1,21 +1,54 @@
-ul.annoucementDisp {
-    width: 400px;
-    border: black solid 2px;
+div.shadow {
+    width: 420px;
+    margin: auto;
+    background-color: rgb(218, 225, 227);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+div.shadow:first-of-type {
+    margin-top: 50px;
+}
+
+div.shadow {
+    margin-bottom: 40px;
+}
+
+table {
+    width:400px;
+    border-radius: 5px;
     margin: auto;
 }
 
-ul.annoucementDisp:not(:first-child) {
-    margin-top: 15px;
+table, th, td, tr {
+    border-collapse: collapse;
+    border: black solid 1px;
+    padding: 3px;
+}
+table th.id {
+    width:20px;
 }
 
-ul.annoucementDisp li {
+table th.title {
+    padding: 10px;
+}
+
+table th.date {
+    width:70px;
+}
+
+table tr.price td {
     text-align: center;
-    list-style: none;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding: 4px;
 }
 
-ul.annoucementDisp li:not(:first-child) {
-    border-top: black solid 1px;
+table tr.content td {
+    justify-content: center;
+    padding: 15px;
+}
 
+table tr.detail td {
+    text-align: right;
+    padding: 5px;
+    padding-right: 10px;
 }

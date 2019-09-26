@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\DTO\AddAnnoucement;
+use App\Entity\Annoucement;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,6 +27,20 @@ class AddController extends AbstractController
 
         // Submitted
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $manager = $this->getDoctrine()->getManager();
+
+            $Annoucement = new Annoucement();
+            $Annoucement->setTitle($addAnnoucement->getTitle());
+            $Annoucement->setPrice($addAnnoucement->getPrice() * 100);
+            $Annoucement->setContent($addAnnoucement->getContent());
+
+            // Save query
+            $manager->persist($Annoucement);
+
+            // Execute query
+            $manager->flush();
+
             return $this->redirectToRoute('home');
         }
 
