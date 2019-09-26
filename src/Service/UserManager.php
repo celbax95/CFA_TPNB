@@ -41,6 +41,6 @@ class UserManager
     }
 
     public function findAnnoucementById(int $id) {
-        return $this->findById($id);
+        return $this->annoucementRepository->findById($id);
 }
 }

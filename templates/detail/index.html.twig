@@ -2,14 +2,18 @@
 
 {% block title %}Detail{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/detail/return.css') }}" type="text/css"/>
+{% endblock %}
+
 {% block body %}
     {% if annoucement is defined %}
     <div class="details">
         {{ include('annoucement.html.twig', {
             'annoucement':annoucement,
-            link:false,
+            'link':false,
         }) }}
-        <a class="detail/retour" href="{{ path('home') }}">Retour</a>
+        <a href="{{ path('home') }}" class="retour"><div class="retour">Retour</div></a>
     </div>
     {% endif %}
 {% endblock %}

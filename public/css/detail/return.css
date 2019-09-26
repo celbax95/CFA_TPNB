@@ -1,0 +1,28 @@
+div.retour {
+    width: 100px;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(218, 225, 227);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px rgb(118, 125, 127);
+    position: relative;
+    margin-top: 15px;
+    margin-left: -50px;
+    left: 50%;
+}
+
+div.retour:hover {background-color: rgb(210, 215, 217)}
+
+div.retour:active {
+    background-color: rgb(100, 205, 207);
+    box-shadow: 0 3px rgb(68, 75, 57);
+    transform: translateY(2px);
+}
+
+a.retour {
+    color: black;
+    text-decoration: none;
+}

@@ -26,7 +26,7 @@ class DetailController extends AbstractController
      * @return Response
      */
     public function index(String $annouceId): Response {
-        $annoucement = $this->userManager->findAnnoucementById($annouceId);
+        $annoucement = $this->userManager->findAnnoucementById($annouceId)[0];
 
         return $this->render('detail/index.html.twig', [
             'annoucement'=>$annoucement,
