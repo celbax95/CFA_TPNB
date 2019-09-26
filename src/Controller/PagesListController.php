@@ -12,6 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PagesListController extends AbstractController
 {
+    const NB_PER_PAGE = 2;
+
     private $userManager;
 
     public function __construct(UserManager $userManager)
@@ -26,11 +28,19 @@ class PagesListController extends AbstractController
      *     defaults={"pageIndex"="1"},
      *     schemes={"https"})
      */
-    public function index(String $pageIndex): Response {
-        $annoucements =$this->userManager->findAllAnnoucements();
+    public function index(String $pageIndex): Response
+    {
+        $start = ((int)$pageIndex-1)*self::NB_PER_PAGE;
+        $end = $start + self::NB_PER_PAGE;
+
+        $annoucements = $this->userManager->findAnnoucementsFromTo($start, $end);
+
+        $totalPages = ceil($this->userManager->findRecordsSize() / self::NB_PER_PAGE);
 
         return $this->render('pageList/index.html.twig', [
             'annoucements' => $annoucements,
+            'currentPage' => $pageIndex,
+            'totalPages' => $totalPages,
         ]);
     }
 }

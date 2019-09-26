@@ -1,0 +1,24 @@
+footer.pages {
+    position: sticky;
+    bottom: 0px;
+    width: 150px;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+footer.pages div {
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+footer.pages div a {
+    position: relative;
+    padding: 20px;
+    top: -3px;
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+}

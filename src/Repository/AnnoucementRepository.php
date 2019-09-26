@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Annoucement;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\NonUniqueResultException;
 
 /**
  * @method Annoucement|null find($id, $lockMode = null, $lockVersion = null)
@@ -35,32 +36,21 @@ class AnnoucementRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    // /**
-    //  * @return Annoucement[] Returns an array of Annoucement objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+    public function findRecordsSize() {
+        try {
+            return $this->createQueryBuilder('findAll')
+                ->select('COUNT(findAll)')
+                ->getQuery()
+                ->getSingleScalarResult();
+        } catch (NonUniqueResultException $e) {
+        }
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Annoucement
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
+    public function findFromTo($start, $end) {
+        return $this->createQueryBuilder('find2')
+            ->setFirstResult($start)
+            ->setMaxResults($end)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult();
     }
-    */
 }

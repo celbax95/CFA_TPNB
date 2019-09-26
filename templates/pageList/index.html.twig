@@ -4,6 +4,7 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/common/h2title.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/pageList/footer.css') }}" type="text/css"/>
 {% endblock %}
 
 {% block body %}
@@ -19,4 +20,19 @@
             {% endfor %}
         </div>
     {% endif %}
+
+    <footer class="pages">
+        <div class="prevPage">
+            {%  if (currentPage - 1) > 0 %}
+                <a href="{{ path('pageList', {'pageIndex': (currentPage-1)})  }}"> &#8678; </a>
+            {% endif %}
+        </div>
+        <div class="curPage"><span> {{ currentPage }} </span></div>
+        <div class="nextPage">
+            {% if (currentPage + 1 <= totalPages) %}
+                <a href="{{ path('pageList', {'pageIndex': (currentPage+1)}) }}"> &#8680; </a>
+            {% endif %}
+        </div>
+    </footer>
+
 {% endblock %}

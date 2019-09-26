@@ -27,7 +27,7 @@ class HomeController extends AbstractController {
      * @return Response
      */
     public function index(): Response {
-        $homeAnnoucements = $this->userManager->find2Annoucement();
+        $homeAnnoucements = $this->userManager->find2Annoucements();
 
         return $this->render('home/index.html.twig', [
             'annoucements' => $homeAnnoucements,

@@ -28,8 +28,16 @@ class UserManager
         return $this->annoucementRepository->findAll();
     }
 
-    public function find2Annoucement() {
+    public function find2Annoucements() {
         return $this->annoucementRepository->find2();
+    }
+
+    public function findAnnoucementsFromTo(int $start, int $end) {
+        return $this->annoucementRepository->findFromTo($start, $end);
+    }
+
+    public function findRecordsSize() {
+        return $this->annoucementRepository->findRecordsSize();
     }
 
     public function findAnnoucementById(int $id) {
