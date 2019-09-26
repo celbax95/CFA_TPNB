@@ -27,6 +27,14 @@ class AnnoucementRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findById(int $id) {
+        return $this->createQueryBuilder('findById')
+            ->where('findById.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Annoucement[] Returns an array of Annoucement objects
     //  */

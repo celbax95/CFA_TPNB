@@ -4,12 +4,19 @@
 namespace App\Controller;
 
 
+use App\Service\UserManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DetailController extends AbstractController
 {
+    private $userManager;
+
+    public function __construct(UserManager $userManager)
+    {
+        $this->userManager = $userManager;
+    }
     /**
      * @Route(path="/annoucement/{annouceId}/detail",
      *     name = "pageDetail",
@@ -19,8 +26,7 @@ class DetailController extends AbstractController
      * @return Response
      */
     public function index(String $annouceId): Response {
-
-        $annoucement = AnnoucementArray::get()[$annouceId];
+        $annoucement = $this->userManager->findAnnoucementById($annouceId);
 
         return $this->render('detail/index.html.twig', [
             'annoucement'=>$annoucement,
