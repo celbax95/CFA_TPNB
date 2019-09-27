@@ -5,6 +5,7 @@ namespace App\Service;
 
 
 use App\Entity\Annoucement;
+use App\Entity\User;
 use App\Repository\AnnoucementRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -19,10 +20,16 @@ class UserManager
         $this->objectManager = $objectManager;
     }
 
-    public function save(Annoucement $annoucement) {
+    public function saveAnnoucement(Annoucement $annoucement) {
         $this->objectManager->persist($annoucement);
         $this->objectManager->flush();
     }
+    public function saveUser(User $user) {
+        $this->objectManager->persist($user);
+        $this->objectManager->flush();
+    }
+
+
 
     public function findAllAnnoucements() {
         return $this->annoucementRepository->findAll();

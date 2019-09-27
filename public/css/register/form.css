@@ -1,0 +1,93 @@
+form {
+    width: 500px;
+    margin: auto;
+}
+
+form div:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+form div {
+    width: 100%;
+}
+
+form div input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 15px;
+    background-color: rgb(218, 225, 227);
+    border: black solid 1px;
+    border-radius: 5px;
+}
+
+form div textarea {
+    width: 100%;
+    max-height: 250px;
+    margin-top: 10px;
+    background-color: rgb(218, 225, 227);
+    border: black solid 1px;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+form li {
+    color: red;
+    list-style: none;
+}
+
+button {
+    width: 100px;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(218, 225, 227);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px rgb(118, 125, 127);
+    position: relative;
+    margin-top: 15px;
+    margin-left: -50px;
+    left: 50%;
+}
+
+button:hover {background-color: rgb(210, 215, 217)}
+
+button:active {
+    background-color: rgb(100, 205, 207);
+    box-shadow: 0 1px rgb(68, 75, 57);
+    transform: translateY(2px);
+}
+
+div.return {
+    width: 100px;
+    padding: 6px 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(218, 225, 227);
+    border: none;
+    border-right: black solid 1px;
+    border-radius: 12px;
+    box-shadow: 0 2px rgb(118, 125, 127);
+    position: relative;
+    margin-top: 40px;
+    margin-left: -50px;
+    left: 50%;
+    font-family: "Arial", Serif;
+    font-size: 13px;
+}
+
+div.return:hover {background-color: rgb(220, 220, 220)}
+
+div.return:active {
+    background-color: rgb(190, 190, 190);
+    box-shadow: 0 1px rgb(68, 75, 57);
+    transform: translateY(2px);
+}
+
+a.return {
+    color: black;
+    text-decoration: none;
+}

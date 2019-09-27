@@ -5,7 +5,7 @@ namespace App\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class AddAnnoucement
+class AddAnnoucement 
 {
     /**
      * @Assert\NotNull(message="add.notNull")

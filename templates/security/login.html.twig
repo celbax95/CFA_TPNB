@@ -9,7 +9,7 @@
 
 {% block body %}
     <form method="post">
-        <h2>Connectez-vous</h2>
+        <h2>{{'login.titleh2'|trans({},'pages')}}</h2>
 
         <div class="email">
             <input class="input1" {% if error %}{{ 'style="border-color:red;"' }}{% endif %} type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
@@ -24,7 +24,7 @@
 
         <div class="remember">
             <label>
-                Remember me
+                {{ 'login.rememberme' | trans({},'pages') }}
                 <label class="switch">
                     <input type="checkbox" name="_remember_me" checked>
                     <span class="slider round"></span>
@@ -33,9 +33,9 @@
         </div>
 
         <div class="btn">
-            <a href="{{ path('home') }}" class="signin left"><div class="signin left">Sign up</div></a>
+            <a href="{{ path('register') }}" class="register left"><div class="register left">{{ 'login.register' | trans({},'pages') }}</div></a>
             <button class="right" type="submit">
-                Sign in
+                {{ 'login.signin' | trans({},'pages') }}
             </button>
         </div>
     </form>

@@ -17,3 +17,21 @@ detail:
 
 pageList:
   titleh2: 'Voici toutes les annonces hébergées'
+
+login:
+  titleh2: 'Connectez-vous ou inscrivez-vous !'
+
+  rememberme: "Se souvenir de moi"
+
+  register: "S'enregister"
+
+  signin: "Se connecter"
+
+register:
+  titleh2: 'Enregistrez-vous'
+  email: 'Email'
+  emailConfirm: "Confirmation de l'email"
+  password: 'Mot de passe'
+  passwordConfirm: 'Confirmation du mot de passe'
+  submit: "Envoyer"
+  return: 'Retour'

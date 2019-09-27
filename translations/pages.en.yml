@@ -17,3 +17,21 @@ detail:
 
 pageList:
   titleh2: 'Here are all the hosted announcements'
+
+login:
+  titleh2: 'Sign in or register yourself !'
+
+  rememberme: "Remember me"
+
+  register: "Register"
+
+  signin: "Sign in"
+
+register:
+  titleh2: 'Register'
+  email: 'Email'
+  emailConfirm: 'Email confirm'
+  password: 'Password'
+  passwordConfirm: 'Password confirm'
+  submit: "Send"
+  return: 'Return'

@@ -43,7 +43,7 @@ class AddController extends AbstractController
             $addAnnoucement->getPrice() * 100,
             $addAnnoucement->getContent());
 
-            $this->userManager->save($annoucement);
+            $this->userManager->saveAnnoucement($annoucement);
 
             return $this->redirectToRoute('home');
         }

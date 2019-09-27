@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/common/h2title.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/register/form.css') }}" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+    <div class="addAnnoucement">
+        <h2> {{'register.titleh2' |trans({}, 'pages')}} </h2>
+        {{ form_start(form) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.emailConfirm) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.passwordConfirm) }}
+        <button type="submit">{{'register.submit' |trans({}, 'pages')}} </button>
+        <a href="{{ path('app_login') }}" class="return"><div class="return">{{ 'register.return' | trans({},'pages') }}</div></a>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
