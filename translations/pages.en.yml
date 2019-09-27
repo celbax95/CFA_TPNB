@@ -35,3 +35,6 @@ register:
   passwordConfirm: 'Password confirm'
   submit: "Send"
   return: 'Return'
+
+base:
+  logout: 'Logout'

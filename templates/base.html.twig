@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome !{% endblock %}</title>
-        <link rel="stylesheet" href="{{ asset('css/common/all.css') }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset('css/common/title.css') }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset('css/common/header.css') }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset('css/common/nav.css') }}" type="text/css"/>
-        {% block stylesheets %}
-        {% endblock %}
-    </head>
-    <body>
-        <h1 class="title">TPNB</h1>
-        <header>
-                {{ include('header.html.twig') }}
-        </header>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome !{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/common/all.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/common/title.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/common/header.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/common/nav.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/base/logout.css') }}" type="text/css"/>
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <a href="{{ path('app_logout') }}" class="logout"><div class="logout">{{ 'base.logout' | trans({},'pages') }}</div></a>
+{% endif %}
+<h1 class="title">TPNB</h1>
+<header>
+    {{ include('header.html.twig') }}
+</header>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>
