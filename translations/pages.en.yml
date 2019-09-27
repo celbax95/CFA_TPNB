@@ -1,0 +1,19 @@
+add:
+  titleh2: "Adding an announcement"
+
+  title: "Announcement title"
+
+  price: "Announcement price"
+
+  content: "Announcement content"
+
+  add: "Add"
+
+annoucement:
+  seeMore: 'See more'
+
+detail:
+  return: 'Return'
+
+pageList:
+  titleh2: 'Here are all the hosted announcements'
