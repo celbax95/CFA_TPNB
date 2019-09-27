@@ -9,13 +9,13 @@
 
 {% block body %}
 <div class="addAnnoucement">
-    <h2>{{ 'titleh2' | trans({},'Add')}}</h2>
+    <h2>{{ 'add.titleh2' | trans({},'pages')}}</h2>
     {{ form_start(form) }}
         {{ form_row(form.title) }}
         {{ form_row(form.price) }}
         {{ form_row(form.content) }}
 
-        <button type="submit">{{'add' | trans({},'Add')}}</button>
+        <button type="submit">{{'add.add' | trans({},'pages')}}</button>
     {{ form_end(form) }}
 </div>
 {% endblock %}
