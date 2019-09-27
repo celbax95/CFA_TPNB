@@ -17,6 +17,7 @@ class DetailController extends AbstractController
     {
         $this->userManager = $userManager;
     }
+
     /**
      * @Route(path="/{_locale}/annoucement/{annouceId}/detail",
      *     name = "pageDetail",

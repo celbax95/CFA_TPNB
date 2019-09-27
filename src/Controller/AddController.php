@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\DTO\AddAnnoucement;
 use App\Entity\Annoucement;
+use App\Service\UserManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AddController extends AbstractController
 {
+    private $userManager;
+
+    public function __construct(UserManager $userManager)
+    {
+        $this->userManager = $userManager;
+    }
+
     /**
      * @Route(path="/{_locale}/annoucement/add",
      *     name="addPage",
@@ -31,15 +39,11 @@ class AddController extends AbstractController
 
             $manager = $this->getDoctrine()->getManager();
 
-            $Annoucement = new Annoucement($addAnnoucement->getTitle(),
+            $annoucement = new Annoucement($addAnnoucement->getTitle(),
             $addAnnoucement->getPrice() * 100,
             $addAnnoucement->getContent());
 
-            // Save query
-            $manager->persist($Annoucement);
-
-            // Execute query
-            $manager->flush();
+            $this->userManager->save($annoucement);
 
             return $this->redirectToRoute('home');
         }
