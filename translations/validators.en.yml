@@ -1,0 +1,2 @@
+add:
+  notNull: "This entry can't be empty."

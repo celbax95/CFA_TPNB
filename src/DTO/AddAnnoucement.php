@@ -8,19 +8,19 @@ use Symfony\Component\Validator\Constraints as Assert;
 class AddAnnoucement
 {
     /**
-     * @Assert\NotNull()
+     * @Assert\NotNull(message="add.notNull")
      * @var
      */
     public $title;
 
     /**
-     * @Assert\NotNull()
+     * @Assert\NotNull(message="add.notNull")
      * @var
      */
     public $price;
 
     /**
-     * @Assert\NotNull()
+     * @Assert\NotNull(message="add.notNull")
      * @var
      */
     public $content;
