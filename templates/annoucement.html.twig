@@ -17,10 +17,12 @@
             <tr class="content">
                 <td colspan="3">{{ annoucement.content }}</td>
             </tr>
+            {% if link %}
             <tr class="detail">
                 <td colspan="3"> <a href="{{ path('pageDetail', {
-                        'annouceId':annoucement.id}) }}">Voir plus...</a> </td>
+                        'annouceId':annoucement.id}) }}">{{ 'seeMore' |trans({},'Annoucement') }}...</a> </td>
             </tr>
+            {% endif %}
             </tbody>
         </table>
     </div>

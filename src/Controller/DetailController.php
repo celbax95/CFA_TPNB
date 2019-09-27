@@ -18,9 +18,11 @@ class DetailController extends AbstractController
         $this->userManager = $userManager;
     }
     /**
-     * @Route(path="/annoucement/{annouceId}/detail",
+     * @Route(path="/{_locale}/annoucement/{annouceId}/detail",
      *     name = "pageDetail",
-     *     requirements={"annouceId"="[0-9]+"},
+     *     requirements={
+     *     "annouceId"="[0-9]+",
+     *     "_locale" : "|fr|en"},
      *     schemes={"https"})
      * @param String $annouceId
      * @return Response

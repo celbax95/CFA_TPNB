@@ -14,8 +14,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class AddController extends AbstractController
 {
     /**
-     * @Route(path="/annoucement/add",
+     * @Route(path="/{_locale}/annoucement/add",
      *     name="addPage",
+     *     requirements={"_locale" : "|fr|en",},
      *     methods={"GET","POST"},
      *     schemes={"https"})
      * @return Response

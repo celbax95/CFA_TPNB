@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Voici toutes les annonces hébergées</h2>
+   <h2> {{ 'titleh2' | trans({}, 'PageList')}} </h2>
 
     {% if annoucements is defined %}
         <div class="annoucementList">

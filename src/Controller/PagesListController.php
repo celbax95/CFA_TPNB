@@ -22,9 +22,11 @@ class PagesListController extends AbstractController
     }
 
     /**
-     * @Route(path="/annoucement/{pageIndex}",
+     * @Route(path="/{_locale}/annoucement/{pageIndex}",
      *     name="pageList",
-     *     requirements={"pageIndex"="[0-9]+"},
+     *     requirements={
+     *     "pageIndex"="|[0-9]+",
+     *     "_locale" : "|fr|en"},
      *     defaults={"pageIndex"="1"},
      *     schemes={"https"})
      */

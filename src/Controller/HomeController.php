@@ -21,8 +21,9 @@ class HomeController extends AbstractController {
     }
 
     /**
-     * @Route(path="/",
+     * @Route(path="/{_locale}",
      *      name="home",
+     *      requirements={"_locale" : "|fr|en",},
      *      schemes={"https"})
      * @return Response
      */

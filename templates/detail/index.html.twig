@@ -13,7 +13,7 @@
             'annoucement':annoucement,
             'link':false,
         }) }}
-        <a href="{{ path('home') }}" class="retour"><div class="retour">Retour</div></a>
+        <a href="{{ path('home') }}" class="retour"><div class="retour">{{ 'return' | trans({}, 'Detail') }}</div></a>
     </div>
     {% endif %}
 {% endblock %}

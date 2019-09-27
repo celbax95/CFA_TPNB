@@ -20,14 +20,16 @@ class AddAnnoucementType extends AbstractType
         $builder
             ->add('title',TextType::class, [
                 'required' => false,
-                'label' => 'Titre de l\'annonce : ',
+                'label' => 'title',
+                'translation_domain' => 'Add',
                 'attr' => [
                     'class' => 'addForm_Title'
                 ]
             ])
             ->add('price', MoneyType::class, [
                 'required' => false,
-                'label' => 'Prix de l\'annonce : ',
+                'label' => 'price',
+                'translation_domain' => 'Add',
                 'currency' => false,
                 'attr' => [
                     'class' => 'addForm_Price'
@@ -35,7 +37,8 @@ class AddAnnoucementType extends AbstractType
             ])
             ->add('content', TextareaType::class, [
                 'required' => false,
-                'label' => 'Contenu de l\'annonce : ',
+                'label' => 'content',
+                'translation_domain' => 'Add',
                 'attr' => [
                     'class' => 'addForm_Content'
                 ]
