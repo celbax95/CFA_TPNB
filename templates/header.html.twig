@@ -1,12 +1,12 @@
 
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-<nav>
-    <ul>
-        <a href="{{ path('home') }}"><li>{{ 'home' | trans({}, 'Header') | upper }}</li></a>
+    <nav>
+        <ul>
+            <a href="{{ path('home') }}"><li>{{ 'home' | trans({}, 'Header') | upper }}</li></a>
 
-        <a href="{{ path('pageList') }}"><li>{{ 'navigate' | trans({}, 'Header') | upper }}</li></a>
+            <a href="{{ path('pageList') }}"><li>{{ 'navigate' | trans({}, 'Header') | upper }}</li></a>
 
-        <a href="{{ path('addPage') }}"><li>{{ 'add' | trans({}, 'Header') | upper }}</li></a>
-    </ul>
-</nav>
+            <a href="{{ path('addPage') }}"><li>{{ 'add' | trans({}, 'Header') | upper }}</li></a>
+        </ul>
+    </nav>
 {% endif %}

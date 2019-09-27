@@ -61,7 +61,7 @@ input.input1 {
     height: 15px;
     width: 15px;
     left: 2px;
-    bottom: 3px;
+    bottom: 2.5px;
     background-color: gray;
     -webkit-transition: .4s;
     transition: .4s;
@@ -108,10 +108,10 @@ button {
     left: 50%;
 }
 
-button:hover {background-color: rgb(210, 215, 217)}
+button:hover {background-color: rgb(220, 220, 220)}
 
 button:active {
-    background-color: rgb(100, 205, 207);
+    background-color: rgb(190, 190, 190);
     box-shadow: 0 1px rgb(68, 75, 57);
     transform: translateY(2px);
 }
