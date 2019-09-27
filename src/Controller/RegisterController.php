@@ -26,7 +26,7 @@ class RegisterController extends AbstractController
     }
 
     /**
-     * @Route(path="/register",
+     * @Route(path="/{_locale}/register",
      *     name="register",
      *     requirements={"_locale" : "|fr|en",},
      *     methods={"GET","POST"},
